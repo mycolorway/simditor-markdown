@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Markdown Demo</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="vendor/bower/simditor/styles/simditor.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="styles/simditor-markdown.css" media="screen" charset="utf-8" />
+    <style type="text/css">
+        html, body {
+            background:#F9F9F9;
+            padding: 0;
+            margin: 0;
+            font: 14px/1.6 "Lucida Grande", "Helvetica", sans-serif;
+            color: #333;
+        }
+        .wrapper {
+            width: 1140px;
+            margin: 0 auto;
+            color: rgb(113, 113, 113);
+        }
+        header {
+            margin: 50px 0;
+            text-align: center;
+        }
+        section {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+        <h1>Simple Markdown</h3>
+    </header>
+    <section>
+      <textarea id="txt-editor">
+        <p>Simditor 是团队协作工具 <a href="http://tower.im">Tower</a> 使用的富文本编辑器。</p>
+        <p>相比传统的编辑器它的特点是：</p>
+        <ul>
+          <li>功能精简，加载快速</li>
+          <li>输出格式化的标准 HTML</li>
+          <li>每一个功能都有非常优秀的使用体验</li>
+        </ul>
+        <p>兼容的浏览器：IE10+、Chrome、Firefox、Safari。</p>
+      </textarea>
+    </section>
+  </div>
+  <script type="text/javascript" src="vendor/bower/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="vendor/bower/simple-module/lib/module.js"></script>
+  <script type="text/javascript" src="vendor/bower/simple-hotkeys/lib/hotkeys.js"></script>
+  <script type="text/javascript" src="vendor/bower/simditor/lib/simditor.js"></script>
+  <script type="text/javascript" src="vendor/bower/to-markdown/dist/to-markdown.js"></script>
+  <script type="text/javascript" src="vendor/bower/marked/lib/marked.js"></script>
+  <script type="text/javascript" src="lib/simditor-markdown.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var editor = new Simditor({
+        textarea: $('#txt-editor'),
+        toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment', '|', 'markdown']
+      });
+    });
+  </script>
+</body>
+
+</html>

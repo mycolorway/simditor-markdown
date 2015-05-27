@@ -1,0 +1,35 @@
+{
+  "name": "simditor-markdown",
+  "description": "Add markdown editing mode for simditor.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/farthinker/simditor-markdown",
+  "author": {
+    "name": "farthinker",
+    "email": "farthinker@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/farthinker/simditor-markdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/farthinker/simditor-markdown/issues"
+  },
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
+  "dependencies": {
+    "jquery": "2.x",
+    "simditor": "~2.1.9",
+    "to-markdown": "~1.1.2",
+    "marked": "~0.3.3"
+  },
+  "devDependencies": {
+    "grunt": "0.x",
+    "grunt-contrib-watch": "0.x",
+    "grunt-contrib-sass": "0.x",
+    "grunt-contrib-coffee": "0.x",
+    "grunt-contrib-jasmine": "0.x",
+    "grunt-umd": "2.x"
+  },
+  "keywords": []
+}

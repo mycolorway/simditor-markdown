@@ -1,0 +1,32 @@
+{
+  "name": "simditor-markdown",
+  "version": "0.0.1",
+  "homepage": "https://github.com/farthinker/simditor-markdown",
+  "authors": [
+    "farthinker <farthinker@gmail.com>"
+  ],
+  "description": "Add markdown editing mode for simditor.",
+  "main": "lib/markdown.js",
+  "keywords": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "spec",
+    "node_modules",
+    "vendor",
+    "Gemfile",
+    "Gemfile.lock",
+    "Gruntfile.coffee",
+    "package.json",
+    "README.md",
+    "demo.html",
+    "circle.yml",
+    "umd.hbs"
+  ],
+  "dependencies": {
+    "jquery": "2.x",
+    "simditor": "df-markdown",
+    "to-markdown": "~1.1.2",
+    "marked": "~0.3.3"
+  }
+}
