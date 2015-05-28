@@ -1,7 +1,7 @@
 {
   "name": "simditor-markdown",
   "description": "Add markdown editing mode for simditor.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/farthinker/simditor-markdown",
   "author": {
     "name": "farthinker",
@@ -18,8 +18,8 @@
     "test": "grunt test --verbose"
   },
   "dependencies": {
-    "jquery": "2.x",
-    "simditor": "~2.1.9",
+    "jquery": "~2.1.4",
+    "simditor": "~2.1.12",
     "to-markdown": "~1.1.2",
     "marked": "~0.3.3"
   },
