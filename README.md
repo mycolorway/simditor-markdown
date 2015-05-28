@@ -23,3 +23,15 @@ var editor = new Simditor({
   toolbar: ['bold', 'italic', 'underline', 'color', '|', 'ol', 'ul', '|', 'markdown']
 });
 ```
+
+###Options
+
+If you want to switch to markdown mode right after Simditor initialized, pass `markdown: true` to Simditor init options:
+
+```js
+var editor = new Simditor({
+  textarea: $('#txt-editor'),
+  markdown: true,
+  toolbar: ['bold', 'italic', 'underline', 'color', '|', 'ol', 'ul', '|', 'markdown']
+});
+```

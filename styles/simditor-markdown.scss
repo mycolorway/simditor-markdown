@@ -26,6 +26,10 @@
       min-height: 100px;
       background: #f3f3f3;
     }
+
+    .simditor-placeholder {
+      display: none !important;
+    }
   }
 
   .simditor-toolbar .toolbar-item.toolbar-item-markdown .simditor-icon {

@@ -35,7 +35,7 @@
         <h1>Simple Markdown</h3>
     </header>
     <section>
-      <textarea id="txt-editor">
+      <textarea id="txt-editor" placeholder="这里入输入内容">
         <p>Simditor 是团队协作工具 <a href="http://tower.im">Tower</a> 使用的富文本编辑器。</p>
         <p>相比传统的编辑器它的特点是：</p>
         <ul>
@@ -58,6 +58,7 @@
     $(function() {
       var editor = new Simditor({
         textarea: $('#txt-editor'),
+        markdown: true,
         toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment', '|', 'markdown']
       });
     });

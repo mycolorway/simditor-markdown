@@ -13,7 +13,13 @@ class SimditorMarkdown extends Simditor.Button
     @markdownEl = $ '<div class="markdown-editor" />'
       .insertBefore @editor.body
     @textarea = $ '<textarea/>'
+      .attr('placeholder', @editor.opts.placeholder)
       .appendTo @markdownEl
+
+    @textarea.on 'focus', (e) =>
+      @editor.el.addClass('focus')
+    .on 'blur', (e) =>
+      @editor.el.removeClass('focus')
 
     @markdownChange = @editor.util.throttle =>
       @_autosizeTextarea()
@@ -26,6 +32,10 @@ class SimditorMarkdown extends Simditor.Button
     else
       @textarea.on 'keyup', (e) =>
         @markdownChange()
+
+    if @editor.opts.markdown
+      @editor.on 'initialized', =>
+        @el.mousedown()
 
   status: ($node) ->
     true

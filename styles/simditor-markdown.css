@@ -20,6 +20,9 @@
   min-height: 100px;
   background: #f3f3f3;
 }
+.simditor.simditor-markdown .simditor-placeholder {
+  display: none !important;
+}
 .simditor .simditor-toolbar .toolbar-item.toolbar-item-markdown .simditor-icon {
   font-size: 18px;
 }
