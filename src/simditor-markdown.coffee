@@ -27,13 +27,6 @@ class SimditorMarkdown extends Simditor.Button
       @textarea.on 'keyup', (e) =>
         @markdownChange()
 
-    # markedRenderer = new marked.Renderer()
-    # markedRenderer.table = (header, body) =>
-    #   console.log header
-    #   console.log body
-    # marked.setOptions
-    #   renderer: markedRenderer
-
   status: ($node) ->
     true
 

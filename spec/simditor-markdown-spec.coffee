@@ -24,7 +24,7 @@ describe 'Simple markdown', ->
       .appendTo 'body'
     editor = new Simditor
       textarea: $textarea
-      toolbar: ['markdown']
+      toolbar: ['markdown', 'table']
 
   afterEach ->
     editor?.destroy()
@@ -41,10 +41,36 @@ describe 'Simple markdown', ->
     expect(editor.el.hasClass('simditor-markdown')).toBe(true)
     expect(editor.body.is('[contenteditable]')).toBe(false)
 
+    expect(button.textarea.val()).toBe('''
+Simditor 是团队协作工具 [Tower](http://tower.im) 使用的富文本编辑器。
+
+相比传统的编辑器它的特点是：
+
+*   功能精简，加载快速
+*   输出格式化的标准 HTML
+*   每一个功能都有非常优秀的使用体验
+
+兼容的浏览器：IE10+、Chrome、Firefox、Safari。
+
+<pre>this is a code snippet</pre>
+
+> First line
+
+* * *
+''')
+
   it 'should convert markdown input to html output', ->
     button = editor.toolbar.findButton 'markdown'
     button.el.mousedown()
 
     button.textarea.val '[Tower](http://tower.im)'
-    button.markdownChange()
+    button._convert()
     expect(editor.getValue()).toBe('<p><a href="http://tower.im">Tower</a></p>')
+
+    button.textarea.val '```\nvar test = 1;\n```'
+    button._convert()
+    expect(editor.getValue()).toBe('<pre><code>var test = 1;\n</code></pre>')
+
+    button.textarea.val '|123|456|789|\n|---|---|---|\n|987|654|321|'
+    button._convert()
+    expect(editor.body.find('table').length).toBe(1)
