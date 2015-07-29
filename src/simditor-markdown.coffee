@@ -24,7 +24,7 @@ class SimditorMarkdown extends Simditor.Button
     @markdownChange = @editor.util.throttle =>
       @_autosizeTextarea()
       @_convert()
-    , 300
+    , 200
 
     if @editor.util.support.oninput
       @textarea.on 'input', (e) =>
@@ -37,8 +37,7 @@ class SimditorMarkdown extends Simditor.Button
       @editor.on 'initialized', =>
         @el.mousedown()
 
-  status: ($node) ->
-    true
+  status: ->
 
   command: ->
     @editor.blur()
@@ -65,8 +64,7 @@ class SimditorMarkdown extends Simditor.Button
 
   _autosizeTextarea: ->
     @_textareaPadding ||= @textarea.innerHeight() - @textarea.height()
-    @textarea.height(0)
-      .height(@textarea[0].scrollHeight - @_textareaPadding)
+    @textarea.height(@textarea[0].scrollHeight - @_textareaPadding)
 
   _convert: ->
     text = @textarea.val()
