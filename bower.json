@@ -1,6 +1,6 @@
 {
   "name": "simditor-markdown",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/farthinker/simditor-markdown",
   "authors": [
     "farthinker <farthinker@gmail.com>"
@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "simditor": "~2.2.0",
+    "simditor": "2.3.x",
     "to-markdown": "~1.1.2",
     "marked": "~0.3.3"
   }
