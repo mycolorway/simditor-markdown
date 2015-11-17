@@ -21,6 +21,10 @@ class SimditorMarkdown extends Simditor.Button
     .on 'blur', (e) =>
       @editor.el.removeClass('focus')
 
+    @editor.on 'valuechanged', (e) =>
+      return unless @editor.markdownMode
+      @_initMarkdownValue()
+
     @markdownChange = @editor.util.throttle =>
       @_autosizeTextarea()
       @_convert()
@@ -45,11 +49,10 @@ class SimditorMarkdown extends Simditor.Button
     @editor.markdownMode = @editor.el.hasClass 'simditor-markdown'
 
     if @editor.markdownMode
+      @editor.inputManager.lastCaretPosition = null
       @editor.hidePopover()
-      @_fileterUnsupportedTags()
-      @textarea.val toMarkdown(@editor.getValue(), gfm: true)
-      @_autosizeTextarea()
       @editor.body.removeAttr 'contenteditable'
+      @_initMarkdownValue()
     else
       @textarea.val ''
       @editor.body.attr 'contenteditable', 'true'
@@ -62,13 +65,24 @@ class SimditorMarkdown extends Simditor.Button
 
     null
 
+  _initMarkdownValue: ->
+    @_fileterUnsupportedTags()
+    @textarea.val toMarkdown(@editor.getValue(), gfm: true)
+    @_autosizeTextarea()
+
   _autosizeTextarea: ->
     @_textareaPadding ||= @textarea.innerHeight() - @textarea.height()
     @textarea.height(@textarea[0].scrollHeight - @_textareaPadding)
 
   _convert: ->
     text = @textarea.val()
-    @editor.setValue marked(text)
+    markdownText = marked(text)
+
+    @editor.textarea.val markdownText
+    @editor.body.html markdownText
+
+    @editor.formatter.format()
+    @editor.formatter.decorate()
 
   _fileterUnsupportedTags: ->
     @editor.body.find('table colgroup').remove()
