@@ -85,7 +85,7 @@ class SimditorMarkdown extends Simditor.Button
     @editor.formatter.decorate()
 
   _fileterUnsupportedTags: ->
-    @editor.body.find('table colgroup').remove()
+    @editor.body.find('colgroup').remove()
 
 
 Simditor.Toolbar.addButton SimditorMarkdown
