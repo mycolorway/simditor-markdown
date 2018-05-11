@@ -3,7 +3,7 @@ simditor-markdown
 
 Add a markdown editing button for Simditor. Use [marked](https://github.com/chjj/marked) as markdown parser and [to-markdown](https://github.com/domchristie/to-markdown) as HTML to markdown converter.
 
-###Usage
+## Usage
 
 Reference button and dependency script on your page with Simditor:
 
@@ -24,7 +24,7 @@ var editor = new Simditor({
 });
 ```
 
-###Options
+## Options
 
 If you want to switch to markdown mode right after Simditor initialized, pass `markdown: true` to Simditor init options:
 
