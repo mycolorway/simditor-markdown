@@ -12,13 +12,14 @@
   resize: none;
   outline: none;
   font-size: 16px;
+  font-family: arial, sans-serif;
 }
 .simditor.simditor-markdown .markdown-editor {
   display: block;
 }
 .simditor.simditor-markdown .simditor-body {
   min-height: 100px;
-  background: #f3f3f3;
+  background: #fff;
 }
 .simditor.simditor-markdown .simditor-placeholder {
   display: none !important;

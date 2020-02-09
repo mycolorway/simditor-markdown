@@ -8,7 +8,7 @@ Add a markdown editing button for Simditor. Use [marked](https://github.com/chjj
 Reference button and dependency script on your page with Simditor:
 
 ```html
-<script type="text/javascript" src="[path]/marked.js"></script>
+<script type="text/javascript" src="[path]/marked.min.js"></script>
 <script type="text/javascript" src="[path]/to-markdown.js"></script>
 <script type="text/javascript" src="[path]/simditor-markdown.js"></script>
 
